@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>StsVim</AssemblyName>
+    <RootNamespace>StsVim</RootNamespace>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameApp Condition="'$(GameApp)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/Slay the Spire 2/SlayTheSpire2.app</GameApp>
+    <GameData>$(GameApp)/Contents/Resources/data_sts2_macos_arm64</GameData>
+    <ModDir>$(GameApp)/Contents/MacOS/mods/StsVim</ModDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2" HintPath="$(GameData)/sts2.dll" Private="false" />
+    <Reference Include="GodotSharp" HintPath="$(GameData)/GodotSharp.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameData)/0Harmony.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- `dotnet build` installs the mod; delete $(ModDir) to uninstall. -->
+  <Target Name="Install" AfterTargets="Build">
+    <Copy SourceFiles="$(OutDir)StsVim.dll;StsVim.json" DestinationFolder="$(ModDir)" />
+    <Copy SourceFiles="$(OutDir)StsVim.dll;StsVim.json" DestinationFolder="workshop/content" />
+  </Target>
+
+</Project>

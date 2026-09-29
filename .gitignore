@@ -1,0 +1,5 @@
+bin/
+obj/
+workshop/content/
+workshop/mod-uploader.log
+.DS_Store

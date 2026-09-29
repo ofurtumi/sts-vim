@@ -1,0 +1,10 @@
+{
+  "id": "StsVim",
+  "name": "StS Vim",
+  "author": "tumi",
+  "description": "Vim keybinds for keyboard-only play.",
+  "version": "0.1.0",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": false
+}

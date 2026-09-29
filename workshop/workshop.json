@@ -1,0 +1,9 @@
+{
+  "title": "StS Vim",
+  "description": "Play Slay the Spire 2 from the keyboard with vim keys. Uses the game's own controller navigation; no gameplay changes. Controller button prompts show the key to press instead.\n\nh j k l - move focus\nSpace / Enter - select\nEsc / Ctrl-[ - cancel, pause when nothing to cancel\ne - end turn\n1-0 - select card\nH / L - tab left / right\np - potions and relics (then j for relics)\nv - peek\ngm gd ga gs gx - map, deck, draw, discard, exhaust\n\nMoving the mouse switches back to mouse mode. Plugging in a gamepad restores gamepad prompts.",
+  "visibility": "private",
+  "changeNote": "Initial release.",
+  "tags": [],
+  "dependencies": [],
+  "contentDescriptors": []
+}
